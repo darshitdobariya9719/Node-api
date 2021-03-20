@@ -9,6 +9,7 @@ module.exports=async function(req,res,next){
         const decode=jwt.verify(token,'asdfghjkl');
         req.user=decode.user;
         next()    
+        
     } catch (err) {
         console.log(err.message);
         res.json({mes:'token not authorised'});
